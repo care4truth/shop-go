@@ -17,7 +17,7 @@ public class PageController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/test") 
+	/*@RequestMapping(value = "/test") 
 	public ModelAndView test(@RequestParam(value = "greeting", required = false) String greeting){ 
 		if (greeting == null) { 
 			greeting = "Hello There";
@@ -35,7 +35,7 @@ public class PageController {
 			ModelAndView mv = new ModelAndView("page");
 			mv.addObject("greeting", greeting);
 			return mv;
-	}
+	} */
 	 
 
 }
