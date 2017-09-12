@@ -19,6 +19,10 @@
     <meta name="author" content="">
 
     <title>Shop n Go - ${title}</title>
+    
+    <script>
+    	window.menu = '${title}';
+    </script>
 
     <!-- Bootstrap core CSS -->
     <link href="${css}/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +54,7 @@
     <script src="${js}/jquery.js"></script>
   	<script src="${js}/popper.min.js"></script>
     <script src="${js}/bootstrap.min.js"></script>
-
+	<script src="${js}/myapp.js"></script>
   </body>
 
 </html>
