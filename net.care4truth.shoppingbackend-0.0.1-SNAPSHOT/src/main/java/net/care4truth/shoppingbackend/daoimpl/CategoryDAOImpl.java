@@ -3,9 +3,12 @@ package net.care4truth.shoppingbackend.daoimpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import net.care4truth.shoppingbackend.dao.CategoryDAO;
 import net.care4truth.shoppingbackend.dto.Category;
 
+@Repository("categoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
 	
 	public static List<Category> categories = new ArrayList<Category>();
@@ -22,6 +25,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		categories.add(category);
 		
 		//second category
+		category = new Category();
 		category.setId(2);
 		category.setName("Mobile");
 		category.setDescription("Here is some description for mobile!");
@@ -31,6 +35,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		categories.add(category);
 		
 		//third category
+		category = new Category();
 		category.setId(3);
 		category.setName("Laptop");
 		category.setDescription("Here is some description for laptop!");
@@ -43,6 +48,18 @@ public class CategoryDAOImpl implements CategoryDAO {
 	@Override
 	public List<Category> list() {
 		// TODO Auto-generated method stub
+		return this.categories;
+	}
+	
+	@Override
+	public Category get(int id) {
+		//enhanced for loop 
+		for(Category category : categories) {
+			if (category.getId() == id) {
+				return category; 
+			}
+		}
+		
 		return null;
 	}
 

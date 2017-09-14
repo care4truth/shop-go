@@ -12,6 +12,12 @@
 		<spring.version>4.3.6.RELEASE</spring.version>
 	</properties>
 	<dependencies>
+		<!-- Linking Backend project -->
+		<dependency>
+			<groupId>net.care4truth</groupId>
+			<artifactId>shoppingbackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -25,7 +31,7 @@
 			<version>${javaeeapi.version}</version>
 			<scope>provided</scope>
 		</dependency>
-			<!-- SPRING DEPENDENCY -->
+		<!-- SPRING DEPENDENCY -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
