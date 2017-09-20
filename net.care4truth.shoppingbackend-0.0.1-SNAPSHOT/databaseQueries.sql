@@ -7,3 +7,5 @@ CREATE TABLE category (
 	
 	CONSTRAINT pk_category_id PRIMARY KEY (id)
 );
+
+INSERT INTO CATEGORY (name, description,image_url) values('Mobile', 'This is description for Mobile Category!','CAT_3.png')
