@@ -25,10 +25,9 @@ public class ProductTestCase {
 		productDAO = (ProductDAO) context.getBean("productDAO");
 	}
 	
-	/* @Test
+	/*@Test
 	public void testCRUDProduct() {
 		product = new Product();
-		
 		product.setName("Micromax s6");
 		product.setBrand("Micromax");
 		product.setDescription("This is some description for micromax mobile phones");
@@ -49,16 +48,16 @@ public class ProductTestCase {
 		
 		//list
 		assertEquals("Something went wrong while fetching the list of products",7,productDAO.list().size());
-	} */
+	}*/
 	
 	@Test
 	public void testListActiveProducts() {
-		assertEquals("Something went wrong while fetching the list of products!",6,productDAO.listActiveProducts().size());
+		assertEquals("Something went wrong while fetching the list of products!",5,productDAO.listActiveProducts().size());
 	}
 	
 	@Test
 	public void testListActiveProductsByCategory() {
-		assertEquals("Something went wrong while fetching the list of products!",4,productDAO.listActiveProductsByCategory(3).size());
+		assertEquals("Something went wrong while fetching the list of products!",3,productDAO.listActiveProductsByCategory(3).size());
 		
 		assertEquals("Something went wrong while fetching the list of products!",1,productDAO.listActiveProductsByCategory(1).size());
 	}

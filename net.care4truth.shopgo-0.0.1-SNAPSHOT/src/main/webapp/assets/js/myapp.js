@@ -19,27 +19,69 @@ $(function() {
 	//code for jquery dataTable
 	// create a dataset
 	var products = [
-			[1,'ABC'],
-			[1,'CYX'],
-			[1,'PQR'],
-			[1,'CDE'],
-			[1,'EFG'],
-			[1,'WVB'],
-			[1,'IJK'],
-			[1,'LMN'],
-			[1,'POQ'],
-			[1,'STU'],
-			[1,'QOR']
+			['1','CBA'],
+			['2','CYX'],
+			['3','PQR'],
+			['4','CDE'],
+			['5','EFG'],
+			['6','WVB'],
+			['7','IJK'],
+			['8','LMN'],
+			['9','POQ'],
+			['10','STU'],
+			['11','QOR']
 	];
 	
 	var $table = $('#productListTable');
 	//exceute the below code only where we have this table
 	if($table.length) {
 		//console.log('Inside the table!');
+		var jsonUrl = '';
+		if(window.categoryId == '') {
+			jsonUrl = window.contextRoot + '/json/data/all/products';
+		} else {
+			jsonUrl = window.contextRoot + '/json/data/category/' + window.categoryId + '/products'
+		}
 		$table.DataTable({
 			lengthMenu : [[3,5,10,-1],['3 Records', '5 Records', '10 Records', 'ALL']],
 			pageLength: 5,	
-			data : products
+			ajax: {
+				url:jsonUrl,
+				dataSrc : ''
+			},
+			columns: [
+				{
+					data:'code',
+					mRender:function(data,type,row){
+						return '<img src="'+window.contextRoot+'/resources/images/'+data+'.jpg" class="dataTableImg"/>';
+					}
+				},
+				{
+					data:'name',
+				},
+				{
+					data : 'brand'
+				}, 
+				{
+					data: 'unitPrice',
+					mRender : function(data,type,row){
+						return "$"+ data;
+					}
+				},
+				{
+					data : 'quantity'
+				},
+				{
+					data:'id',
+					bSortable:false,
+					mRender: function(data,type,row){
+						var str = '';
+						str += '<a href="'+window.contextRoot+'/show/'+data+'/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a>&#160';
+						str += '<a href="'+window.contextRoot+'/cart/add/'+data+'/product"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
+						return str;
+					}
+				}
+			]
 		});
 	}
 });
