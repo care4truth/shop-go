@@ -10,6 +10,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<c:if test="${userClickAllProducts == true}" >
+					<script>window.categoryId = '${category.id}';</script>
 					<ol class="breadcrumb">
 						<li><a href="${contextRoot}/home">Home</a></li>
 						<li clas="active">All Products</li>

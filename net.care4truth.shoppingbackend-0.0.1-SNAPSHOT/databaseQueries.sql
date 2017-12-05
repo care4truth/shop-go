@@ -1,16 +1,19 @@
+drop table category;
+drop table product;
+drop table user_detail;
+
 CREATE TABLE category (
 	id IDENTITY,
 	name VARCHAR(50),
 	description VARCHAR(255),
 	image_url VARCHAR(50),
-	is_active BOOLEAN,
-	
+	is_active BOOLEAN,	
 	CONSTRAINT pk_category_id PRIMARY KEY (id)
 );
 
-INSERT INTO CATEGORY (name, description,image_url) values('Laptop', 'This is description for Laptop Category!','CAT_1.png');
-INSERT INTO CATEGORY (name, description,image_url) values('Television', 'This is description for Television Category!','CAT_2.png');
-INSERT INTO CATEGORY (name, description,image_url) values('Mobile', 'This is description for Mobile Category!','CAT_3.png');
+INSERT INTO CATEGORY (name, description,image_url,is_active) values('Laptop', 'This is description for Laptop Category!','CAT_1.png',true);
+INSERT INTO CATEGORY (name, description,image_url,is_active) values('Television', 'This is description for Television Category!','CAT_2.png',true);
+INSERT INTO CATEGORY (name, description,image_url,is_active) values('Mobile', 'This is description for Mobile Category!','CAT_3.png',true);
 
 
 CREATE TABLE USER_DETAIL (

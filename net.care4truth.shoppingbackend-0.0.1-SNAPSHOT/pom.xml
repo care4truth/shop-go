@@ -59,12 +59,19 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
-		<!--  Jackson Annotations  -->
+		<!-- Jackson Annotations -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+		<!--Flyway to do database migrations -->
+		<!-- <dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>3.0</version>
+		</dependency>
+ -->
 	</dependencies>
 	<build>
 		<plugins>
@@ -76,6 +83,22 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<!--  <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>4.2.0</version>
+                <configuration>
+                    <url>jdbc:h2:file:./target/foobar</url>
+                    <user>sa</user>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.h2database</groupId>
+                        <artifactId>h2</artifactId>
+                        <version>1.4.196</version>
+                    </dependency>
+                </dependencies>
+            </plugin> -->
 		</plugins>
 	</build>
 </project>

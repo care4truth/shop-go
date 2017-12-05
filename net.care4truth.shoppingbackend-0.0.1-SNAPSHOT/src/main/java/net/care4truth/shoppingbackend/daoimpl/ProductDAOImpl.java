@@ -1,7 +1,6 @@
 package net.care4truth.shoppingbackend.daoimpl;
 
 import java.util.List;
-import java.util.ArrayList;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

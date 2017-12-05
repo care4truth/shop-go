@@ -19,23 +19,23 @@ $(function() {
 	//code for jquery dataTable
 	// create a dataset
 	var products = [
-			[1,'ABC'],
-			[1,'CYX'],
-			[1,'PQR'],
-			[1,'CDE'],
-			[1,'EFG'],
-			[1,'WVB'],
-			[1,'IJK'],
-			[1,'LMN'],
-			[1,'POQ'],
-			[1,'STU'],
-			[1,'QOR']
+			['1','CBA'],
+			['2','CYX'],
+			['3','PQR'],
+			['4','CDE'],
+			['5','EFG'],
+			['6','WVB'],
+			['7','IJK'],
+			['8','LMN'],
+			['9','POQ'],
+			['10','STU'],
+			['11','QOR']
 	];
 	
 	var $table = $('#productListTable');
 	//exceute the below code only where we have this table
 	if($table.length) {
-		//console.log('Inside the table!');
+		console.log('Inside the table!');
 		$table.DataTable({
 			lengthMenu : [[3,5,10,-1],['3 Records', '5 Records', '10 Records', 'ALL']],
 			pageLength: 5,	

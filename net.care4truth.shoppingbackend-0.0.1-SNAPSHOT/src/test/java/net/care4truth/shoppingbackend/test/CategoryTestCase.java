@@ -61,31 +61,24 @@ public class CategoryTestCase {
 	
 	@Test
 	public void testCRUDCategory() {
-		category = new Category();
-		Category category = new Category();
-		category.setName("Laptop");
-		category.setDescription("Here is some description for Laptop!");
-		category.setImageURL("CAT_3.png");
-		
-		assertEquals("successfully added a category inside the table!",true, categoryDAO.add(category) );
 		
 		//second category
 		category = new Category();
-		
-		category.setName("Television");
-		category.setDescription("Here is some description for Television!");
-		category.setImageURL("CAT_1.png");
+
+		category.setName("Hamradio");
+		category.setDescription("Here is some description for Hamradio!");
+		category.setImageURL("CAT_4.png");
 		
 		assertEquals("successfully added a category inside the table!",true,categoryDAO.add(category));
 		
 		//fetching and update
-		category = categoryDAO.get(2);
-		category.setName("T.V");
+		//category = categoryDAO.get(4);
+		category.setName("H.Radio");
 		assertEquals("Successfully update a category Inside a table!", true, categoryDAO.update(category));
 		
 		assertEquals("Successfully deleted a category Inside a table!", true, categoryDAO.delete(category));
 		
-		assertEquals("Successfully listed categories Inside a table!", 1, categoryDAO.list().size());
+		assertEquals("Successfully listed categories Inside a table!", 3, categoryDAO.list().size());
 	}
 	
 }
