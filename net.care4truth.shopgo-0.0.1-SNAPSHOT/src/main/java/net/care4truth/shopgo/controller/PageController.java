@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.care4truth.shopgo.exception.ProductNotFoundException;
 import net.care4truth.shoppingbackend.dao.CategoryDAO;
 import net.care4truth.shoppingbackend.dao.ProductDAO;
 import net.care4truth.shoppingbackend.dto.Category;
@@ -89,11 +90,14 @@ public class PageController {
 	 * */
 	
 	@RequestMapping(value = { "/show/{id}/product" })
-	public ModelAndView showSingleProduct(@PathVariable("id") int id) {
+	public ModelAndView showSingleProduct(@PathVariable("id") int id) throws ProductNotFoundException {
 		
 		ModelAndView mv = new ModelAndView("page");
 		
 		Product product = productDAO.get(id);
+		
+		if(product == null) throw new ProductNotFoundException();
+		
 		product.setViews(product.getViews() + 1);
 		productDAO.update(product);
 		// --------------------------------
