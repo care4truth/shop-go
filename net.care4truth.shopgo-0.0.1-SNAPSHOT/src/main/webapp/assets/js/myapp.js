@@ -99,4 +99,12 @@ $(function() {
 			]
 		});
 	}
+	
+	//dismissing the alert after 3 seconds automatically 
+	var alert = $('.alert');
+	if($alert.length) {
+		setTimeout(function(){
+			$alert.fadOut('slow');
+		},3000)
+	}
 });

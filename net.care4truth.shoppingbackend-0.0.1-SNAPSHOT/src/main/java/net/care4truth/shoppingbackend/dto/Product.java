@@ -117,6 +117,14 @@ public class Product {
 	public void setViews(int views) {
 		this.views = views;
 	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", code=" + code + ", brand=" + brand + ", description="
+				+ description + ", unitPrice=" + unitPrice + ", quantity=" + quantity + ", active=" + active
+				+ ", categoryID=" + categoryID + ", supplierId=" + supplierId + ", purchases=" + purchases + ", views="
+				+ views + "]";
+	}
 	
 	
 	
