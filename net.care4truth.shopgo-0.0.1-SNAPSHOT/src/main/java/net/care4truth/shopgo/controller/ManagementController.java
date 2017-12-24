@@ -2,16 +2,22 @@ package net.care4truth.shopgo.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.care4truth.shopgo.util.FileUploadUtility;
 import net.care4truth.shoppingbackend.dao.CategoryDAO;
 import net.care4truth.shoppingbackend.dao.ProductDAO;
 import net.care4truth.shoppingbackend.dto.Category;
@@ -53,11 +59,28 @@ public class ManagementController {
 	}
 	//handling product submission
 	@RequestMapping(value="/products" , method = RequestMethod.POST) 
-	public String handleProductSubmission(@ModelAttribute("product") Product modifiedProduct) {
+	public String handleProductSubmission(@Valid @ModelAttribute("product") Product modifiedProduct , BindingResult results , Model model 
+			,HttpServletRequest httpServletRequest) {
+		
+		//check if there are any errors 
+		if(results.hasErrors()) {
+			model.addAttribute("userClickManageProducts", true);
+			model.addAttribute("title" , "Manage Products");
+			model.addAttribute("message", "Validation failed for Product Submission!");
+			//should not return any redirect string instead we have to return the same page
+			return "page";
+		}
+		
 		
 		logger.info(modifiedProduct.toString());
 		//create a new product record
 		productDAO.add(modifiedProduct);
+		
+		if(!modifiedProduct.getFile().getOriginalFilename().equals("")) {
+			FileUploadUtility.uploadFile(httpServletRequest, modifiedProduct.getFile() , modifiedProduct.getCode());
+		}
+		
+		
 		return "redirect:/manage/products?operation=product";
 	}
 	

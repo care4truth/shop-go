@@ -84,12 +84,38 @@
 			<version>${jackson.version}</version>
 		</dependency>
 		<!--Flyway to do database migrations -->
-		<!-- <dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-			<version>3.0</version>
+		<!-- <dependency> <groupId>org.flywaydb</groupId> <artifactId>flyway-core</artifactId> 
+			<version>3.0</version> </dependency> -->
+
+		<!-- Validation API -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
 		</dependency>
- -->
+		<!--Hibernate Validator -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.7.Final</version>
+		</dependency>
+		<!-- SLF4j Logging -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<!-- JCL OVER SLF4J Dependency -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -101,22 +127,11 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<!--  <plugin>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>4.2.0</version>
-                <configuration>
-                    <url>jdbc:h2:file:./target/foobar</url>
-                    <user>sa</user>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.h2database</groupId>
-                        <artifactId>h2</artifactId>
-                        <version>1.4.196</version>
-                    </dependency>
-                </dependencies>
-            </plugin> -->
+			<!-- <plugin> <groupId>org.flywaydb</groupId> <artifactId>flyway-maven-plugin</artifactId> 
+				<version>4.2.0</version> <configuration> <url>jdbc:h2:file:./target/foobar</url> 
+				<user>sa</user> </configuration> <dependencies> <dependency> <groupId>com.h2database</groupId> 
+				<artifactId>h2</artifactId> <version>1.4.196</version> </dependency> </dependencies> 
+				</plugin> -->
 		</plugins>
 	</build>
 </project>
