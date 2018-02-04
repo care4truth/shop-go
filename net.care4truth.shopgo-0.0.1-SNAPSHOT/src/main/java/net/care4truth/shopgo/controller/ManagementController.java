@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import net.care4truth.shopgo.util.FileUploadUtility;
+import net.care4truth.shopgo.validator.ProductValidator;
 import net.care4truth.shoppingbackend.dao.CategoryDAO;
 import net.care4truth.shoppingbackend.dao.ProductDAO;
 import net.care4truth.shoppingbackend.dto.Category;
@@ -61,6 +62,8 @@ public class ManagementController {
 	@RequestMapping(value="/products" , method = RequestMethod.POST) 
 	public String handleProductSubmission(@Valid @ModelAttribute("product") Product modifiedProduct , BindingResult results , Model model 
 			,HttpServletRequest httpServletRequest) {
+		
+		new ProductValidator().validate(modifiedProduct,results);
 		
 		//check if there are any errors 
 		if(results.hasErrors()) {
