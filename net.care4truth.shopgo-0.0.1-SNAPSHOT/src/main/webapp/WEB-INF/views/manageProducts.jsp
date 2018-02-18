@@ -13,7 +13,7 @@
 			</div>
 		</div>
 	</c:if>
-	<div class="row">	
+	<div class="row">
 		<div class="col-md-offset-2 col-md-8">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
@@ -71,11 +71,11 @@
 						</div>
 						<!--  file element for image upload -->
 						<div class="form-group">
-							<label class="control-label col-md-4" for="file">Select an Image: </label>
+							<label class="control-label col-md-4" for="file">Select
+								an Image: </label>
 							<div class="col-md-8">
-								<sf:input type="file" path="file" id="file"
-									class="form-control" />
-								<sf:errors path="file" cssClass="help-block" element="em"/>
+								<sf:input type="file" path="file" id="file" class="form-control" />
+								<sf:errors path="file" cssClass="help-block" element="em" />
 							</div>
 						</div>
 						<div class="form-group">
@@ -101,7 +101,7 @@
 								<sf:hidden path="views" />
 							</div>
 						</div>
-				</sf:form>
+					</sf:form>
 				</div>
 			</div>
 		</div>
@@ -109,77 +109,32 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<h3>Available Products</h3>
-			
+
 		</div>
 		<!-- TODO : Create a Toggle Switch -->
 		<div class="col-xs-12">
-			<div style="overflow:auto">
-				<table id="adminProductsTable" class="table table-striped table-bordered">
+			<div style="overflow: auto">
+				<table id="adminProductsTable"
+					class="table table-striped table-bordered">
 					<thead>
 						<tr>
 							<th>Id</th>
 							<th>&#160;</th>
 							<th>Name</th>
+							<th>Brand</th>				
 							<th>Quantity</th>
 							<th>Unit Price</th>
 							<th>Active</th>
 							<th>Edit</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>4</td>
-							<td>
-								<img class="adminDataTableImg" src="${contextRoot}/resources/images/PRDACDF126.jpg" 
-								alt="Macbook Pro"/>
-							</td>
-							<td>Macbook Pro</td>
-							<td>6</td>
-							<td>&#8377; 700.00</td>
-							<td>
-								<!--  to -->
-								<label class="switch">
-									<input type="checkbox" checked="checked" value="4" />
-									<div class="slider"/>
-								</label>
-							</td>
-							<td>
-								<a href="${contextRoot}/manage/4/product" class="btn btn-warning">
-									<span class="glyphicon glyphicon-pencil"></span>
-								</a>
-							
-							</td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td>
-								<img class="adminDataTableImg" src="${contextRoot}/resources/images/PRDACDF125.jpg" 
-								alt="Google Pixel"/>
-								
-							</td>
-							<td>Google Pixel</td>
-							<td>5</td>
-							<td>&#8377; 250.00</td>
-							<td>
-								<!--  to -->
-								<label class="switch">
-									<input type="checkbox" checked="checked" value="4" />
-									<div class="slider"/>
-								</label>
-							</td>
-							<td>
-								<a href="${contextRoot}/manage/4/product" class="btn btn-warning">
-									<span class="glyphicon glyphicon-pencil"></span>
-								</a>
-							
-							</td>
-						</tr>
-					</tbody>
+
 					<tfoot>
 						<tr>
 							<th>Id</th>
 							<th>&#160;</th>
 							<th>Name</th>
+							<th>Brand</th>
 							<th>Quantity</th>
 							<th>Unit Price</th>
 							<th>Active</th>
@@ -189,13 +144,5 @@
 				</table>
 			</div>
 		</div>
-
 	</div>
-
-<!-- <div class = "container">
-	<div class="row">
-		<h1>Manage Products</h1>
-		<hr/>
-		<p>Manage Products</p>
-	</div>
-</div> -->
+</div>
