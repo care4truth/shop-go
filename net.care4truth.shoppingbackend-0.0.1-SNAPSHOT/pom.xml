@@ -16,12 +16,29 @@
 		<hibernate.version>5.2.10.Final</hibernate.version>
 		<jackson.version>2.9.1</jackson.version>
 	</properties>
+	<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.0.RELEASE</version>
+    </parent>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		<!-- SPRING BOOT  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.0.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+			<version>2.0.0.RELEASE</version>
 		</dependency>
 		<!-- SPRING CORE DEPENDENCY -->
 		<dependency>
@@ -127,6 +144,10 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugin>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-maven-plugin</artifactId>
+           	</plugin>
 			<!-- <plugin> <groupId>org.flywaydb</groupId> <artifactId>flyway-maven-plugin</artifactId> 
 				<version>4.2.0</version> <configuration> <url>jdbc:h2:file:./target/foobar</url> 
 				<user>sa</user> </configuration> <dependencies> <dependency> <groupId>com.h2database</groupId> 

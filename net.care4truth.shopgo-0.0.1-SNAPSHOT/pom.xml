@@ -7,6 +7,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>shopgo Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+	</parent>
 	<properties>
 		<javaeeapi.version>7.0</javaeeapi.version>
 		<spring.version>4.3.6.RELEASE</spring.version>
@@ -66,8 +71,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
-
 	</dependencies>
 	<build>
 		<plugins>
