@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<javaeeapi.version>7.0</javaeeapi.version>
-		<spring.version>5.2.22.RELEASE</spring.version>
+		<spring.version>5.2.24.RELEASE</spring.version>
 	</properties>
 	<dependencies>
 		<!-- Linking Backend project -->
